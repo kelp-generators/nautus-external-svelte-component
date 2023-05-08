@@ -51,6 +51,7 @@ const generator = async (prompts, validationRegExes, about, dir, cmd, mergeScrip
 
     const { prompt, confirm, numeral, toggle, select, multiSelect } = prompts
     const { identifier, repository, license } = validationRegExes
+    const path = require('path')
 
     // Do your prompts here
     if (!about.githubUsername) about.githubUsername = await prompt('GitHub Username')
