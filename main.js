@@ -171,6 +171,8 @@ export default {
     const [exc] = await cmd(installCmd)
     if (exc !== 0) console.log(chalk.red('Failed to install packages. Make sure to run: ' + chalk.cyan(installCmd)))
 
+    removeDefault('Build')
+    removeDefault('Release')
     mergeScript('Build', `await spawn('npm', ['run', 'build'])`)
     mergeScript('Release', `
 
